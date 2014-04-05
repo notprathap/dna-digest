@@ -26,7 +26,7 @@ class DefaultController extends FOSRestController
      */
     public function getItemsAction()
     {
-        $view = $this->view(['item1', 'item2'], 200);
+        $view = $this->view(200);
 
         return $this->handleView($view);
     }
