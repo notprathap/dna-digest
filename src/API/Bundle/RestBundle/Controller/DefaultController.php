@@ -22,7 +22,8 @@ class DefaultController extends FOSRestController
      *  description="Get all dataset descriptions",
      *  filters={
      *      {"name"="search-term", "dataType"="string"}
-     *  }
+     *  },
+     * output="API\Bundle\RestBundle\Entity\Item"
      * )
      */
     public function getItemsAction()
