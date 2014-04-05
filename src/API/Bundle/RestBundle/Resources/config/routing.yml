@@ -1,3 +1,7 @@
 api_rest_homepage:
     pattern:  /hello/{name}
     defaults: { _controller: APIRestBundle:Default:index }
+
+api_rest_get_items:
+    type: rest
+    resource: API\Bundle\RestBundle\Controller\DefaultController
