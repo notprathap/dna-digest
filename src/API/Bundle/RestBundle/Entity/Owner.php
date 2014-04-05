@@ -3,10 +3,14 @@
 namespace API\Bundle\RestBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use JMS\Serializer\Annotation\ExclusionPolicy;
+use JMS\Serializer\Annotation\Exclude;
 
 /**
  * @ORM\Entity
  * @ORM\Table(name="owner")
+ * @ExclusionPolicy("none")
+ *
  */
 class Owner
 {
@@ -79,6 +83,7 @@ class Owner
     protected $postcode;
 
     /**
+     * @Exclude
      * @ORM\OneToMany(targetEntity="Item", mappedBy="owner")
      */
     protected $items;
