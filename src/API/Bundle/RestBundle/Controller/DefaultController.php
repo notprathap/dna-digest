@@ -13,9 +13,7 @@ class DefaultController extends FOSRestController
     }
 
     /**
-     * This is the documentation description of your method, it will appear
-     * on a specific pane. It will read all the text until the first
-     * annotation.
+     * This retrieves a summary of all metadata available for the given search term
      *
      * @ApiDoc(
      *  resource=true,
@@ -23,7 +21,7 @@ class DefaultController extends FOSRestController
      *  filters={
      *      {"name"="search-term", "dataType"="string"}
      *  },
-     * output="API\Bundle\RestBundle\Entity\Item"
+     *  output="API\Bundle\RestBundle\Entity\Item"
      * )
      */
     public function getItemsAction()
@@ -31,5 +29,34 @@ class DefaultController extends FOSRestController
         $view = $this->view(['item1', 'item2'], 200);
 
         return $this->handleView($view);
+    }
+
+    /**
+     * This retrieves the complete metadata available for a given dataset
+     *
+     * @ApiDoc(
+     *  resource=true,
+     *  description="Get complete metadat for the dataset",
+     *  output="API\Bundle\RestBundle\Entity\Item"
+     * )
+     * @param $itemId
+     */
+    public function getItemAction($itemId)
+    {
+
+    }
+
+    /**
+     * Register a dataset
+     *
+     * @ApiDoc(
+     *  resource=true,
+     *  description="Register a dataset",
+     *  input="API\Bundle\RestBundle\Entity\Item"
+     * )
+     */
+    public function postItemAction()
+    {
+
     }
 }
